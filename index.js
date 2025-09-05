@@ -19,8 +19,6 @@ User.create(
   .then(() => console.log('User created') );
 
 app.get('/', (req, res) => {
-    /*res.send({mensaje: 'Hello World! login'});*/
-
     User.find().then(x=> res.send(x));
 });
 
