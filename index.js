@@ -1,10 +1,14 @@
+require('dotenv').config();
+
+const MONGODB_URI = process.env.URI;
 const express = require('express');
 const app = express();
+
+
 
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-  console.log('Hello World! login');
     res.send({mensaje: 'Hello World! login'});
 });
 
