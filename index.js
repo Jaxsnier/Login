@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-const MONGODB_URI = process.env.URI || "mongodb+srv://Jaxsnier:Eep2265244@logincluster.oz23f9k.mongodb.net/?retryWrites=true&w=majority&appName=LoginCluster";
+const MONGODB_URI = process.env.URI
 const express = require('express');
 const app = express();
 
