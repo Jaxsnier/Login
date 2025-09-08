@@ -52,17 +52,17 @@ routes.post('/register', (req, res) => {
 routes.post('/login', (req, res) => {
    const { username, password } = req.body;
    Users.findOne({ username }).exec().then(user => {
-      if (!user) return res.status(401).send('Usuario o password incorrecto - 1');
+      if (!user) return res.status(401).send('Usuario incorrecto l-1');
 
       crypto.pbkdf2(password, user.salt, 10000, 64, 'sha1', (err, key) => {
-         if (err) return res.status(500).send('Error encryptando password');
+         if (err) return res.status(500).send('Error encryptando password l-2');
          
          const encryptedPassword = key.toString('base64'); //encriptamos
          if (user.password === encryptedPassword) { //contraseñas coinciden 
             const token = signToken(user._id);
             return res.send({ token });
          }
-         res.status(401).send('Usuario o password incorrecto');
+         res.status(401).send('Password incorrecto');
       });
    });
 });
