@@ -70,7 +70,7 @@ routes.post('/login', (req, res) => {
 routes.get('/me',isAuthenticated, (req, res) => {
    res.send({
       _id: req.user._id,
-      username: req.user.username
+      username: req.user.username,
    });
 });
 
