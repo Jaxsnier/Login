@@ -68,7 +68,10 @@ routes.post('/login', (req, res) => {
 });
 
 routes.get('/me',isAuthenticated, (req, res) => {
-   res.send(req.user);
+   res.send({
+      _id: req.user._id,
+      username: req.user.username
+   });
 });
 
 module.exports = routes;
